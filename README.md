@@ -1,6 +1,6 @@
 <a id="markdown-component-aws---settings-component-for-aws-clients" name="component-aws---settings-component-for-aws-clients"></a>
 # component-aws - Settings component for AWS clients
-
+[![GoDoc](https://godoc.org/github.com/asecurityteam/component-aws?status.svg)](https://godoc.org/github.com/asecurityteam/component-aws)
 <!-- TOC -->
 
 - [component-aws - Settings component for AWS clients](#component-aws---settings-component-for-aws-clients)

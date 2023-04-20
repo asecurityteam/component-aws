@@ -1,11 +1,12 @@
-// +build integration
+//go:build integration
 
 package tests
 
 import (
 	"context"
+	"crypto/rand"
 	"fmt"
-	"math/rand"
+	"math/big"
 	"os"
 	"testing"
 	"time"
@@ -17,8 +18,12 @@ import (
 )
 
 func TestDynamo(t *testing.T) {
-	tableName := fmt.Sprintf("%d", rand.Int63())
-	partitionKey := fmt.Sprintf("%d", rand.Int63())
+	numGen, err := rand.Int(rand.Reader, big.NewInt(27))
+	if err != nil {
+		require.NoError(t, err)
+	}
+	tableName := fmt.Sprintf("abc")
+	partitionKey := fmt.Sprintf("%d", numGen.Int64())
 	region := os.Getenv("DYNAMO_REGION")
 	endpoint := os.Getenv("DYNAMO_ENDPOINT")
 
@@ -34,13 +39,13 @@ func TestDynamo(t *testing.T) {
 	for time.Since(start) < 10*time.Second {
 		_, err = client.CreateTable(&dynamodb.CreateTableInput{
 			AttributeDefinitions: []*dynamodb.AttributeDefinition{
-				&dynamodb.AttributeDefinition{
+				{
 					AttributeName: awssdk.String(partitionKey),
 					AttributeType: awssdk.String("S"),
 				},
 			},
 			KeySchema: []*dynamodb.KeySchemaElement{
-				&dynamodb.KeySchemaElement{
+				{
 					AttributeName: awssdk.String(partitionKey),
 					KeyType:       awssdk.String("HASH"),
 				},

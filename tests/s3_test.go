@@ -1,11 +1,12 @@
-// +build integration
+//go:build integration
 
 package tests
 
 import (
 	"context"
+	"crypto/rand"
 	"fmt"
-	"math/rand"
+	"math/big"
 	"os"
 	"testing"
 	"time"
@@ -17,7 +18,11 @@ import (
 )
 
 func TestS3(t *testing.T) {
-	bucket := fmt.Sprintf("TEST%d", rand.Int63())
+	numGen, err := rand.Int(rand.Reader, big.NewInt(27))
+	if err != nil {
+		require.NoError(t, err)
+	}
+	bucket := fmt.Sprintf("TEST%d", numGen.Int64())
 	region := os.Getenv("S3_REGION")
 	endpoint := os.Getenv("S3_ENDPOINT")
 

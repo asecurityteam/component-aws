@@ -22,7 +22,7 @@ func TestDynamo(t *testing.T) {
 	if err != nil {
 		require.NoError(t, err)
 	}
-	tableName := fmt.Sprintf("abc")
+	tableName := "abc"
 	partitionKey := fmt.Sprintf("%d", numGen.Int64())
 	region := os.Getenv("DYNAMO_REGION")
 	endpoint := os.Getenv("DYNAMO_ENDPOINT")

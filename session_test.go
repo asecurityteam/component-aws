@@ -2,8 +2,9 @@ package aws
 
 import (
 	"context"
+	"crypto/rand"
 	"fmt"
-	"math/rand"
+	"math/big"
 	"testing"
 
 	"github.com/asecurityteam/settings"
@@ -17,16 +18,19 @@ func TestSession(t *testing.T) {
 	require.Equal(t, "sharedprofile", s.SharedCredentialConfig.Name())
 	require.Equal(t, "static", s.StaticCredentialConfig.Name())
 	require.Equal(t, "assumerole", s.AssumeRoleCredentialConfig.Name())
-
-	s.Region = fmt.Sprintf("%d", rand.Int63())
-	s.Endpoint = fmt.Sprintf("%d", rand.Int63())
-	s.SharedCredentialConfig.File = fmt.Sprintf("%d", rand.Int63())
-	s.SharedCredentialConfig.Profile = fmt.Sprintf("%d", rand.Int63())
-	s.StaticCredentialConfig.ID = fmt.Sprintf("%d", rand.Int63())
-	s.StaticCredentialConfig.Secret = fmt.Sprintf("%d", rand.Int63())
-	s.StaticCredentialConfig.Token = fmt.Sprintf("%d", rand.Int63())
-	s.AssumeRoleCredentialConfig.Role = fmt.Sprintf("%d", rand.Int63())
-	s.AssumeRoleCredentialConfig.ExternalID = fmt.Sprintf("%d", rand.Int63())
+	numGen, err := rand.Int(rand.Reader, big.NewInt(27))
+	if err != nil {
+		require.NoError(t, err)
+	}
+	s.Region = fmt.Sprintf("%d", numGen.Int64())
+	s.Endpoint = fmt.Sprintf("%d", numGen.Int64())
+	s.SharedCredentialConfig.File = fmt.Sprintf("%d", numGen.Int64())
+	s.SharedCredentialConfig.Profile = fmt.Sprintf("%d", numGen.Int64())
+	s.StaticCredentialConfig.ID = fmt.Sprintf("%d", numGen.Int64())
+	s.StaticCredentialConfig.Secret = fmt.Sprintf("%d", numGen.Int64())
+	s.StaticCredentialConfig.Token = fmt.Sprintf("%d", numGen.Int64())
+	s.AssumeRoleCredentialConfig.Role = fmt.Sprintf("%d", numGen.Int64())
+	s.AssumeRoleCredentialConfig.ExternalID = fmt.Sprintf("%d", numGen.Int64())
 
 	ses, err := cmp.New(context.Background(), s)
 	require.Nil(t, err)
@@ -34,10 +38,14 @@ func TestSession(t *testing.T) {
 }
 
 func TestSessionSettings(t *testing.T) {
+	numGen, err := rand.Int(rand.Reader, big.NewInt(27))
+	if err != nil {
+		require.NoError(t, err)
+	}
 	src := settings.NewMapSource(map[string]interface{}{
 		"session": map[string]interface{}{
-			"region":        fmt.Sprintf("%d", rand.Int63()),
-			"endpoint":      fmt.Sprintf("%d", rand.Int63()),
+			"region":        fmt.Sprintf("%d", numGen.Int64()),
+			"endpoint":      fmt.Sprintf("%d", numGen.Int64()),
 			"sharedprofile": map[string]interface{}{},
 			"static":        map[string]interface{}{},
 			"assumerole":    map[string]interface{}{},

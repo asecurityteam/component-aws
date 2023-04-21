@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/asecurityteam/settings v0.7.0
-	github.com/aws/aws-sdk-go v1.36.28
+	github.com/aws/aws-sdk-go v1.44.247
 	github.com/stretchr/testify v1.8.2
 )
 

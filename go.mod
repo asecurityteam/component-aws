@@ -3,9 +3,9 @@ module github.com/asecurityteam/component-aws
 go 1.19
 
 require (
-	github.com/asecurityteam/settings v0.7.0
-	github.com/aws/aws-sdk-go v1.36.28
-	github.com/stretchr/testify v1.8.2
+	github.com/asecurityteam/settings v1.0.0
+	github.com/aws/aws-sdk-go v1.54.11
+	github.com/stretchr/testify v1.9.0
 )
 
 require (

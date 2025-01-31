@@ -1,6 +1,20 @@
 <a id="markdown-component-aws---settings-component-for-aws-clients" name="component-aws---settings-component-for-aws-clients"></a>
 # component-aws - Settings component for AWS clients
 [![GoDoc](https://godoc.org/github.com/asecurityteam/component-aws?status.svg)](https://godoc.org/github.com/asecurityteam/component-aws)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=bugs)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=code_smells)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=coverage)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=ncloc)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=alert_status)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=security_rating)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=sqale_index)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=asecurityteam_component-aws&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=asecurityteam_component-aws)
+
+
 <!-- TOC -->
 
 - [component-aws - Settings component for AWS clients](#component-aws---settings-component-for-aws-clients)

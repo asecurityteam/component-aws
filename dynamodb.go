@@ -3,7 +3,7 @@ package aws
 import (
 	"context"
 
-	"github.com/asecurityteam/settings"
+	"github.com/asecurityteam/settings/v2"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 )
 

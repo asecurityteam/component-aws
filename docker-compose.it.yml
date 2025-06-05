@@ -18,7 +18,7 @@ services:
     depends_on:
       - localstack
   localstack:
-    image: localstack/localstack:0.10.2
+    image: localstack/localstack:4.5.0
     environment:
       - LOCALSTACK_SERVICES=dynamodb,s3
     volumes:
